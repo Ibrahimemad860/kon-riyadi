@@ -667,7 +667,7 @@ let og=null;const dg=x=>x.replace(/[٠-٩]/g,d=>'٠١٢٣٤٥٦٧٨٩'.indexOf(d
 document.querySelectorAll('#og .cmb').forEach(b=>b.onclick=()=>{og=b.dataset.g;document.querySelectorAll('#og .cmb').forEach(x=>x.classList.toggle('sel',x===b))});
 $('#ob').onclick=()=>{const n=$('#onm').value.trim().replace(/\s+/g,' '),np=n?n.split(' '):[],p=dg($('#op').value).replace(/[\s\-+]/g,''),a=$('#oa').value.trim(),e=$('#oe');
  if(!og){e.textContent='اختار: ولد ولا بنت';return}
- if(np.length<3||np.some(w=>w.replace(/[^\p{L}]/gu,'').length<2)){e.textContent='اكتب اسمك ثلاثي على الأقل (مثال: أحمد محمد علي)';return}
+ if(np.length<3||np.some(w=>w.replace(/[^\p{L}]/gu,'').length<2)){e.textContent='اكتب اسمك ثلاثي';return}
  if(!/^\d{10,14}$/.test(p)){e.textContent='رقم الموبايل غير صحيح';return}
  if(a.length<3){e.textContent='اكتب عنوانك';return}
  e.textContent='';S.pf={g:og,n,p,a};S.pfSent=0;save();apply();sendPf();go('splash');render()};
