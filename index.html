@@ -380,15 +380,15 @@ body:has(#run.on) #hdr,body:has(#run.on) #tkw{display:none!important}
 <section class="view kr-run" id="run">
 <div class="kr-run-top"><button class="cmb" data-go="contents" type="button">رجوع</button><div><h2>كن رياضي</h2><p>اجري • تابع • حقق هدفك</p></div><img class="kr-run-logo" data-logo alt="شعار كن رياضي"></div>
 <div id="runWelcome" class="run-welcome"><div class="eyebrow">حركتك • رحلتك • إنجازك</div><img class="brand-art" data-logo alt="شعار كن رياضي"><h1>كل خطوة<br>ليها حكاية</h1><p class="hero-copy">ابدأ رحلتك مع كن رياضي</p><div class="run-feature-row"><div><b>⌖</b><small>مسار من الموقع</small></div><div><b>◴</b><small>وقت ومسافة</small></div><div><b>↗</b><small>إيقاع ومتابعة</small></div></div><button type="button" id="welcomeStart" class="kr-run-primary">ابدأ الجري ←</button><p class="start-caption">القياس يبدأ بعد إذن الموقع وقراءة صالحة.</p><button type="button" id="welcomeSettings" class="cmb run-home-secondary">ضبط القياس</button></div><div id="runLive" hidden><div id="runStateName" class="run-stage-label">جاهز للقياس</div><div class="kr-run-hero"><span class="kr-run-tag">تتبّع الجري بالموقع</span>
-<div class="kr-run-ring"><div class="kr-run-ring-inner"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="15" cy="5" r="2"/><path d="M9 21l3-6 3 2v4M12 15l-1-4 4-2 3 3M8 12l3-3"/></svg><b id="rk">0.000</b><span>كيلومتر</span><small id="rmeters">0 متر مقاس بالموقع</small></div></div>
+<div class="kr-run-ring"><div class="kr-run-ring-inner"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="15" cy="5" r="2"/><path d="M9 21l3-6 3 2v4M12 15l-1-4 4-2 3 3M8 12l3-3"/></svg><b id="rk">0</b><span>خطوة</span><small id="rmeters" style="font-size:1.05rem;font-weight:900;color:#fff;margin-top:8px">0.000 كم • مسافة GPS</small></div></div>
 <div class="kr-run-status" id="rg" role="status">جاهز للبدء.</div><div class="err" id="rerr" role="alert"></div>
 </div>
-<div class="kr-run-stats"><div><span class="kr-run-icon">◴</span><b id="rt">00:00</b><small>مدة الجري</small></div><div><span class="kr-run-icon">↗</span><b id="ravg">0.0</b><small>كم/س • متوسط السرعة</small></div><div><span class="kr-run-icon">♨</span><b id="rc">0</b><small>سعرة • تقديري</small></div></div>
-<div class="run-metrics-more"><div><b id="rstepsTop">0</b><small>خطوة • حساس حركة الموبايل</small></div><div><b id="rpace">—</b><small>دقيقة / كم • إيقاع متوسط</small></div></div><div class="kr-run-controls"><button class="kr-run-primary" id="rb" type="button">السماح بالموقع وبدء الجري</button><button class="kr-run-finish" id="rf" type="button" hidden>إنهاء وحفظ</button><button class="cmb" id="rgcancel" type="button" hidden>إلغاء انتظار الموقع</button></div><button type="button" id="gpsPermissionCheck" class="cmb gps-check">الموقع مرفوض؟ افحص الإذن</button><aside id="gpsPermissionHelp" class="gps-permission-help" hidden aria-live="polite"><h3>صلاحية الموقع على هذا الجهاز</h3><p id="gpsPermissionAdvice"></p><details class="gps-tech"><summary>تفاصيل فحص الصفحة</summary><p id="gpsPermissionState"></p></details><p class="run-local-note">لو استمر الرفض: ابعت نوع الجهاز واسم المتصفح.</p><button type="button" id="gpsPermissionClose" class="cmb">إغلاق</button></aside><div class="run-plot-card"><header><b>موقعك ومسارك المباشر</b><span id="gpsSignalBadge" class="gps-badge idle">في انتظار GPS</span></header><div id="liveCoords" class="run-coords" dir="ltr"><span>الإحداثيات: —</span><span>الدقة: —</span></div><div id="liveMapWrap" class="run-map-wrap" hidden><div id="liveMap" class="run-map"></div><button type="button" id="liveMapRecenter" class="run-map-recenter" hidden>⌖ توسيط موقعي</button></div><div id="liveRoute" class="run-plot"></div><div id="liveRouteNote" class="run-local-note">خريطة مباشرة لموقعك ومسارك عبر GPS (محلية على جهازك، الإحداثيات لا تُرسل للسيرفر). الانقطاعات لا تُوصل.</div></div><div class="run-plot-card"><header><b>سرعة المقاطع المقاسة</b><span>كم/س × زمن الجلسة</span></header><div id="liveChart" class="run-plot"></div></div>
+<div class="kr-run-stats" style="grid-template-columns:1fr 1fr"><div><span class="kr-run-icon">◴</span><b id="rt">00:00</b><small>مدة الجري</small></div><div><span class="kr-run-icon">♨</span><b id="rc">0</b><small>سعرة • تقديري</small></div></div>
+<div class="kr-run-controls"><button class="kr-run-primary" id="rb" type="button">السماح بالموقع وبدء الجري</button><button class="kr-run-finish" id="rf" type="button" hidden>إنهاء وحفظ</button><button class="cmb" id="rgcancel" type="button" hidden>إلغاء انتظار الموقع</button></div><button type="button" id="gpsPermissionCheck" class="cmb gps-check">الموقع مرفوض؟ افحص الإذن</button><aside id="gpsPermissionHelp" class="gps-permission-help" hidden aria-live="polite"><h3>صلاحية الموقع على هذا الجهاز</h3><p id="gpsPermissionAdvice"></p><details class="gps-tech"><summary>تفاصيل فحص الصفحة</summary><p id="gpsPermissionState"></p></details><p class="run-local-note">لو استمر الرفض: ابعت نوع الجهاز واسم المتصفح.</p><button type="button" id="gpsPermissionClose" class="cmb">إغلاق</button></aside><div class="run-plot-card"><header><b>موقعك ومسارك المباشر</b><span id="gpsSignalBadge" class="gps-badge idle">في انتظار GPS</span></header><div id="liveCoords" class="run-coords" dir="ltr"><span>الإحداثيات: —</span><span>الدقة: —</span></div><div id="liveMapWrap" class="run-map-wrap" hidden><div id="liveMap" class="run-map"></div><button type="button" id="liveMapRecenter" class="run-map-recenter" hidden>⌖ توسيط موقعي</button></div><div id="liveRoute" class="run-plot"></div><div id="liveRouteNote" class="run-local-note">خريطة مباشرة لموقعك ومسارك عبر GPS (محلية على جهازك، الإحداثيات لا تُرسل للسيرفر). الانقطاعات لا تُوصل.</div></div><div class="run-plot-card"><header><b>سرعة المقاطع المقاسة</b><span>كم/س × زمن الجلسة</span></header><div id="liveChart" class="run-plot"></div></div>
 <div class="kr-run-steps"><div><b id="rsteps">0</b><span>عداد الخطوات <small>تلقائي</small></span></div><p id="rms" role="status">يبدأ تلقائياً مع الجري لحساب كل خطوة • المسافة الفعلية تُحسب عبر GPS فقط.</p><button type="button" class="cmb" id="rmb">تفعيل / فحص حساس الخطوات</button></div>
 
 <details class="kr-run-details"><summary>تفاصيل الجلسة وضبط القياس</summary><p class="kr-run-note">لا يبدأ الجري إلا بعد قراءة موقع صالحة. اترك الصفحة مفتوحة؛ قفل الشاشة أو فقد الموقع يوقف الجري مؤقتًا. دقة المسافة حسب إشارة الهاتف، والخطوات تجريبية وليست عدّاد الهاتف الأصلي.</p><div class="rinfo" id="rdt" dir="ltr"><div><span>Date</span><b id="rd1">--</b></div><div><span>Day</span><b id="rd2">--</b></div><div><span>Time</span><b id="rd3">--</b></div><div><span>Distance</span><b id="rd4">0.000 km</b></div></div><p class="tmsg"><span id="rmi">0.000</span> ميل • 1 كم = 1000 متر</p><label class="fld">وزنك بالكيلو لحساب سعرات تقديرية<input id="rwt" type="number" inputmode="decimal" min="20" max="250" placeholder="70"></label><div class="fld" id="rkw" hidden>مسافة معروفة من مضمار أو قياس آخر، تُحفظ كإدخال يدوي وليست GPS<input id="rkm" type="number" inputmode="decimal" step="0.001" min="0" placeholder="اختياري، مثال 5.2"></div></details>
-</div><div id="runSummary" class="run-summary" hidden><div class="summary-medal" aria-hidden="true">★</div><h2>تم حفظ رحلتك</h2><div class="sum-number" id="sumDistance">0.000</div><div class="sum-unit">كيلومتر</div><p id="sumSource" class="sum-source"></p><div class="kr-run-stats"><div><span class="kr-run-icon">◴</span><b id="sumTime">00:00</b><small>مدة الجري</small></div><div><span class="kr-run-icon">♨</span><b id="sumCal">0</b><small>سعرة • تقديري</small></div><div><span class="kr-run-icon">↗</span><b id="sumPace">—</b><small>دقيقة / كم</small></div></div><div class="run-metrics-more" style="grid-template-columns:1fr"><div><b id="sumSteps">—</b><small>إجمالي الخطوات المسجلة (المسافة الفعلية عبر GPS فقط)</small></div></div><p id="sumGaps" class="sum-gaps"></p><div class="run-plot-card"><header><b>مسار الجلسة</b><span>من قراءات الموقع</span></header><div id="sumMapWrap" class="run-map-wrap" hidden><div id="sumMap" class="run-map"></div></div><div id="sumRoute" class="run-plot"></div></div><div class="run-plot-card"><header><b>سرعة المقاطع</b><span>كم/س × زمن الجلسة</span></header><div id="sumChart" class="run-plot"></div></div><div class="run-summary-actions"><button type="button" id="summaryNew" class="kr-run-primary">جري جديد</button><button type="button" id="summaryExport" class="cmb">تنزيل ملخص نصي</button><button type="button" id="summaryDone" class="cmb">تم • العودة للبداية</button></div><div class="run-local-note">الملخص محفوظ على هذا الجهاز. لا يؤكد وصوله للسيرفر.</div></div><div class="kr-run-history"><h2>آخر جرياتك</h2><div class="tmsg" id="rtot"></div><div class="goals" id="rh"></div></div>
+</div><div id="runSummary" class="run-summary" hidden><div class="summary-medal" aria-hidden="true">★</div><h2>تم حفظ رحلتك</h2><div class="sum-number" id="sumDistance">0</div><div class="sum-unit">خطوة</div><p id="sumSource" class="sum-source"></p><div class="kr-run-stats" style="grid-template-columns:1fr 1fr"><div><span class="kr-run-icon">◴</span><b id="sumTime">00:00</b><small>مدة الجري</small></div><div><span class="kr-run-icon">♨</span><b id="sumCal">0</b><small>سعرة • تقديري</small></div></div><div class="run-metrics-more" style="grid-template-columns:1fr"><div><b id="sumSteps">0.000 كم</b><small>المسافة الفعلية المقاسة بالـ GPS</small></div></div><p id="sumGaps" class="sum-gaps"></p><div class="run-plot-card"><header><b>مسار الجلسة</b><span>من قراءات الموقع</span></header><div id="sumMapWrap" class="run-map-wrap" hidden><div id="sumMap" class="run-map"></div></div><div id="sumRoute" class="run-plot"></div></div><div class="run-plot-card"><header><b>سرعة المقاطع</b><span>كم/س × زمن الجلسة</span></header><div id="sumChart" class="run-plot"></div></div><div class="run-summary-actions"><button type="button" id="summaryNew" class="kr-run-primary">جري جديد</button><button type="button" id="summaryExport" class="cmb">تنزيل ملخص نصي</button><button type="button" id="summaryDone" class="cmb">تم • العودة للبداية</button></div><div class="run-local-note">الملخص محفوظ على هذا الجهاز. لا يؤكد وصوله للسيرفر.</div></div><div class="kr-run-history"><h2>آخر جرياتك</h2><div class="tmsg" id="rtot"></div><div class="goals" id="rh"></div></div>
 </section>
 
 <section class="view" id="food"><button class="back" data-go="contents">رجوع</button><div class="glass"><h2>اختبر معلوماتك في التغذية</h2><div class="tmsg qcnt"></div><div class="qbody"></div></div></section>
@@ -697,7 +697,7 @@ function updateGpsReadout(){const b=$('#gpsSignalBadge'),co=$('#liveCoords');if(
  co.innerHTML='<span>'+p.lat.toFixed(6)+', '+p.lon.toFixed(6)+'</span><span>±'+a+' م</span>';
 }
 function runUI(){const t=rt(),rs=S.runs||[],w=$('#rwt');if(w&&document.activeElement!==w)w.value=S.wt||'';
- $('#rt').textContent=fmt(t);$('#rk').textContent=RN.km.toFixed(3);$('#rc').textContent=calc(RN.km);$('#rmeters').textContent=Math.round(RN.km*1000)+' متر مقاس بالموقع';$('#ravg').textContent=(t>0?RN.km/(t/3600):0).toFixed(1);$('#rmi').textContent=(RN.km*.621371).toFixed(3);runClock();
+ $('#rt').textContent=fmt(t);$('#rk').textContent=String(RN.steps||0);$('#rc').textContent=calc(RN.km);$('#rmeters').textContent=RN.km.toFixed(3)+' كم • مسافة GPS ('+Math.round(RN.km*1000)+' م)';$('#rmi').textContent=(RN.km*.621371).toFixed(3);runClock();
  $('#rb').textContent=GPS_PENDING?(GPS_PERM_OK?'تم قبول الإذن • تثبيت GPS...':'جاري طلب إذن الموقع...'):RN.run?'إيقاف مؤقت':(RN.s0?'استكمال':'السماح بالموقع وبدء الجري');$('#rb').disabled=GPS_PENDING;$('#rgcancel').hidden=!GPS_PENDING;$('#rf').hidden=!RN.s0;$('#rkw').hidden=!RN.s0;
  $('#rg').textContent=RN.status;const stTxt=RN.stepData||RN.steps>0||RN.motionOn?String(RN.steps):'0';$('#rsteps').textContent=stTxt;const stTop=$('#rstepsTop');if(stTop)stTop.textContent=stTxt;updateGpsReadout();
  $('#rh').replaceChildren();rs.slice(0,5).forEach(r=>{const x=ENd(r.st||r.d),g=el('div','goal'),b=el('div');b.style.cssText='display:grid;gap:6px;width:100%';
@@ -761,12 +761,12 @@ function gpsError(e){if(!RN.run)return;
 }
 function resetPeaks(){RN.gravity=null;RN.stepSmooth=0;RN.peakAt=0;RN.cadence=0;RN.armed=true;RN.motionLast=0}
 /* Step counter via phone accelerometer: counts every real step taken; actual distance remains GPS-only. */
-function motionFix(e){if(!RN.run)return;
+function motionFix(e){if(!RN.run&&!GPS_PENDING)return;
  const a=e.accelerationIncludingGravity,lin=e.acceleration;
  const hasG=a&&[a.x,a.y,a.z].every(Number.isFinite);
  const hasL=lin&&[lin.x,lin.y,lin.z].every(Number.isFinite);
  if(!hasG&&!hasL)return;
- const ts=Number.isFinite(e.timeStamp)?e.timeStamp:performance.now();
+ const ts=(e&&Number.isFinite(e.simTs))?e.simTs:performance.now();
  if(hasG){
   const mag=Math.hypot(a.x,a.y,a.z);if(mag>45)return;
   if(RN.gravity==null||!RN.motionLast||ts-RN.motionLast>2000){
@@ -775,23 +775,23 @@ function motionFix(e){if(!RN.run)return;
    return;
   }
   const dt=Math.max(1,ts-RN.motionLast);RN.motionLast=ts;
-  RN.gravity+=Math.min(1,dt/(300+dt))*(mag-RN.gravity);
+  RN.gravity+=Math.min(1,dt/(280+dt))*(mag-RN.gravity);
   const dyn=mag-RN.gravity;
-  RN.stepSmooth+=Math.min(1,dt/(55+dt))*(dyn-RN.stepSmooth);
+  RN.stepSmooth+=Math.min(1,dt/(45+dt))*(dyn-RN.stepSmooth);
  }else{
   const lmag=Math.hypot(lin.x,lin.y,lin.z);if(lmag>35)return;
   const dt=RN.motionLast?Math.max(1,Math.min(2000,ts-RN.motionLast)):20;
   RN.motionLast=ts;
-  RN.stepSmooth+=Math.min(1,dt/(55+dt))*(lmag-RN.stepSmooth);
+  RN.stepSmooth+=Math.min(1,dt/(45+dt))*(lmag-RN.stepSmooth);
  }
  if(!RN.stepData){RN.stepData=true;$('#rms').textContent='عداد الخطوات يعمل تلقائياً • كل خطوة تُسجّل، والمسافة الفعلية تُحسب عبر GPS فقط.'}
- if(RN.stepSmooth<0.25)RN.armed=true;
- if(RN.stepSmooth>0.95&&RN.armed){
+ if(RN.stepSmooth<0.2)RN.armed=true;
+ if(RN.stepSmooth>0.75&&RN.armed){
   const span=RN.peakAt?(ts-RN.peakAt):9999;
-  if(span<240)return;
+  if(span<230)return;
   RN.armed=false;RN.peakAt=ts;RN.steps++;
   rnSave();
-  const s=String(RN.steps);$('#rsteps').textContent=s;const st=$('#rstepsTop');if(st)st.textContent=s;
+  const s=String(RN.steps);$('#rk').textContent=s;$('#rsteps').textContent=s;
  }
 }
 async function enableMotion(auto){const b=$('#rmb');
@@ -924,16 +924,16 @@ function plotSVG(target,kind,rows){const root=$('#'+target);if(!root)return;root
  if(kind==='route'){for(const [i,color] of [[0,'#fff'],[points.length-1,'#ef3340']]){const c=document.createElementNS(ns,'circle');c.setAttribute('cx',points[i].x);c.setAttribute('cy',points[i].y);c.setAttribute('r','5');c.setAttribute('fill',color);svg.append(c)}}root.append(svg)
 }
 function runExtraUI(){const active=RUN_OPEN||RN.s0||GPS_PENDING;$('#runWelcome').hidden=!!active||!!RUN_SUMMARY;$('#runLive').hidden=!active||!!RUN_SUMMARY;$('#runSummary').hidden=!RUN_SUMMARY;
- $('#rpace').textContent=paceText(RN.km,rt());$('#runStateName').textContent=GPS_PENDING?(GPS_PERM_OK?'تم قبول الإذن • تثبيت GPS':'في انتظار إذن الموقع'):RN.run?'الجري جارٍ':GPS_DENIED_STATE?'القياس متوقف • إذن الموقع مطلوب':RN.s0?'الجلسة متوقفة':'جاهز لطلب الموقع';
+ $('#runStateName').textContent=GPS_PENDING?(GPS_PERM_OK?'تم قبول الإذن • تثبيت GPS':'في انتظار إذن الموقع'):RN.run?'الجري جارٍ':GPS_DENIED_STATE?'القياس متوقف • إذن الموقع مطلوب':RN.s0?'الجلسة متوقفة':'جاهز لطلب الموقع';
  if(active&&!RUN_SUMMARY){syncLiveMap();plotSVG('liveChart','speed',RN.samples)}
- if(RUN_SUMMARY){const r=RUN_SUMMARY;$('#sumDistance').textContent=(+r.km||0).toFixed(3);$('#sumTime').textContent=fmt(r.t);$('#sumCal').textContent=r.cal;$('#sumPace').textContent=paceText(r.km,r.t);const ss=$('#sumSteps');if(ss)ss.textContent=r.steps!=null?String(r.steps):'0';$('#sumSource').textContent=r.source==='manual'?'مسافة أُدخلت يدويًا، ليست قياس GPS.':r.source==='gps'?'المسافة الفعلية من GPS فقط (والخطوات من حساس الحركة).':'سجل سابق؛ مصدر القياس غير مسجل.';$('#sumGaps').textContent=r.gaps?'توجد فترات انقطاع؛ المسار والمسافة قد يكونان ناقصين.':'الخطوات من حساس الموبايل • المسافة الفعلية عبر GPS فقط';syncSumMap(r);plotSVG('sumChart','speed',r.samples)}
+ if(RUN_SUMMARY){const r=RUN_SUMMARY;$('#sumDistance').textContent=String(r.steps!=null?r.steps:0);$('#sumTime').textContent=fmt(r.t);$('#sumCal').textContent=r.cal;const ss=$('#sumSteps');if(ss)ss.textContent=(+r.km||0).toFixed(3)+' كم';$('#sumSource').textContent=r.source==='manual'?'مسافة أُدخلت يدويًا، ليست قياس GPS.':r.source==='gps'?'المسافة الفعلية من GPS فقط (والخطوات من حساس الحركة).':'سجل سابق؛ مصدر القياس غير مسجل.';$('#sumGaps').textContent=r.gaps?'توجد فترات انقطاع؛ المسار والمسافة قد يكونان ناقصين.':'الخطوات من حساس الموبايل • المسافة الفعلية عبر GPS فقط';syncSumMap(r);plotSVG('sumChart','speed',r.samples)}
 }
 function showRunSummary(r){RUN_SUMMARY=structuredClone(r);RUN_OPEN=false;runExtraUI();window.scrollTo({top:0,behavior:'smooth'})}
 $('#welcomeStart').onclick=()=>{RUN_OPEN=true;RUN_SUMMARY=null;LIVE_FOLLOW=true;if(LIVE_MAP)LIVE_MAP.centered=false;runStart();runUI()};
 $('#welcomeSettings').onclick=()=>{RUN_OPEN=true;runExtraUI();document.querySelector('.kr-run-details').open=true;document.querySelector('.kr-run-details').scrollIntoView({behavior:'smooth'})};
 $('#summaryDone').onclick=()=>{RUN_SUMMARY=null;RUN_OPEN=false;runExtraUI();window.scrollTo({top:0,behavior:'smooth'})};
 $('#summaryNew').onclick=()=>{RUN_SUMMARY=null;RUN_OPEN=true;LIVE_FOLLOW=true;if(LIVE_MAP)LIVE_MAP.centered=false;runStart();runUI()};
-$('#summaryExport').onclick=()=>{if(!RUN_SUMMARY)return;const r=RUN_SUMMARY;const text=['كن رياضي','المسافة الفعلية (GPS): '+(+r.km).toFixed(3)+' كم','الخطوات: '+(r.steps!=null?r.steps:0),'المدة: '+fmt(r.t),'الإيقاع: '+paceText(r.km,r.t)+' دقيقة/كم','السعرات التقديرية: '+r.cal,r.source==='manual'?'المسافة إدخال يدوي':'المسافة من تحديد الموقع GPS'].join('\n');const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='koon-riyadi-run.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+$('#summaryExport').onclick=()=>{if(!RUN_SUMMARY)return;const r=RUN_SUMMARY;const text=['كن رياضي','المسافة الفعلية (GPS): '+(+r.km).toFixed(3)+' كم','الخطوات: '+(r.steps!=null?r.steps:0),'المدة: '+fmt(r.t),'السعرات التقديرية: '+r.cal,r.source==='manual'?'المسافة إدخال يدوي':'المسافة من تحديد الموقع GPS'].join('\n');const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='koon-riyadi-run.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 
 var GPS_HELP_VERSION=0,GPS_DENIED_STATE=false;
 async function locationHelp(){const version=++GPS_HELP_VERSION,box=$('#gpsPermissionHelp');box.hidden=false;$('#gpsPermissionState').textContent='فحص صلاحية هذه الصفحة…';const rows=[];const local=location.protocol==='file:',secure=window.isSecureContext,policy=document.permissionsPolicy||document.featurePolicy;let blocked=false;try{blocked=!!policy&&typeof policy.allowsFeature==='function'&&!policy.allowsFeature('geolocation')}catch(e){}
@@ -1289,14 +1289,8 @@ function runStart(){
    if(!GPS_PERM_OK){GPS_PERM_OK=true;GPS_PERM_AT=now;$('#rb').textContent='تم قبول الإذن • تثبيت GPS...'}
    RN.curPos={lat:c.latitude,lon:c.longitude,acc:c.accuracy};
    if(!RN.run){
-    const waited=now-(GPS_PERM_AT||now);
-    const startLimit=waited>8000?60:35;
-    if(c.accuracy>startLimit){
-     gpsStatus('تم قبول الإذن ✓ جاري تثبيت الدقة (حالياً ±'+Math.round(c.accuracy)+' م)...');
-     runUI();return;
-    }
     GPS_PENDING=false;gpsAcquisitionClear();$('#rb').disabled=false;
-    RN.run=1;RN.t0=now;if(!RN.s0)RN.s0=now;RN.last=null;RN.kf=null;RN.seen=0;RN.lastRecvAt=now;RN.badCount=0;resetPeaks();
+    RN.run=1;RN.t0=now;if(!RN.s0)RN.s0=now;RN.last=null;RN.kf=null;RN.seen=0;RN.lastRecvAt=now;RN.badCount=0;
     RN.iv=setInterval(()=>{
      if(RN.lastRecvAt&&Date.now()-RN.lastRecvAt>25000){gpsStatus('في انتظار تحديث جديد من GPS (تحرك في مكان مفتوح)...')}
      rnSave();if($('#run').classList.contains('on'))runUI();
